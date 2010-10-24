@@ -1,0 +1,28 @@
+diff -urN mono-gkeyfile-sharp-1a1adb8/GKeyFile/Makefile.am mono-gkeyfile-sharp-1a1adb8.new/GKeyFile/Makefile.am
+--- mono-gkeyfile-sharp-1a1adb8/GKeyFile/Makefile.am	2010-09-11 18:16:41.000000000 +0200
++++ mono-gkeyfile-sharp-1a1adb8.new/GKeyFile/Makefile.am	2010-10-24 12:53:03.434530211 +0200
+@@ -19,7 +19,7 @@
+ 
+ noinst_DATA = gkeyfile-sharp.dll
+ 
+-moduledir = $(libdir)/mono/gkeyfile-sharp/
++moduledir = $(prefix)/lib/mono/gkeyfile-sharp/
+ module_SCRIPTS = gkeyfile-sharp.dll.config
+ 
+ all: gkeyfile-sharp.dll
+@@ -36,11 +36,11 @@
+ 	$(CSC) -keyfile:$(top_srcdir)/gkeyfile-sharp.snk -out:$@ -unsafe -target:library $(GLIB_SHARP_LIBS) $^
+ 
+ install-data-local:
+-	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gkeyfile-sharp /root $(DESTDIR)$(libdir)";  \
+-        $(GACUTIL) /i $(ASSEMBLY) /f /package gkeyfile-sharp /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gkeyfile-sharp /root $(DESTDIR)$(prefix)/lib";  \
++        $(GACUTIL) /i $(ASSEMBLY) /f /package gkeyfile-sharp /root $(DESTDIR)$(prefix)/lib || exit 1;
+ 
+ uninstall-local:
+-	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gkeyfile-sharp /root $(DESTDIR)$(libdir)"; \
+-        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gkeyfile-sharp /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gkeyfile-sharp /root $(DESTDIR)$(prefix)/lib"; \
++        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gkeyfile-sharp /root $(DESTDIR)$(prefix)/lib || exit 1;
+ 
+ EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) gkeyfile-sharp.dll.config.in
