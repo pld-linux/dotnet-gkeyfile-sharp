@@ -5,11 +5,12 @@ Summary:	.NET bindings for GLib2's keyfile implementation
 Summary(pl.UTF-8):	Wiązania implementacji GLib2 keyfile dla .NET
 Name:		dotnet-gkeyfile-sharp
 Version:	0.1
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	gkeyfile-sharp-%{version}.tar.gz
 # Source0-md5:	52988c1293443b8cb536d1b971a14158
+Patch0:		%{name}-monodir.patch
 URL:		http://github.com/mono/gkeyfile-sharp/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -43,6 +44,7 @@ Pliki programistyczne gkeyfile-sharp.
 
 %prep
 %setup -q -n mono-gkeyfile-sharp-1a1adb8/
+%patch0 -p1
 
 %build
 %{__aclocal}
