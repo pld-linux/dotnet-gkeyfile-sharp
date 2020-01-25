@@ -1,5 +1,4 @@
 #
-%include	/usr/lib/rpm/macros.mono
 #
 Summary:	.NET bindings for GLib2's keyfile implementation
 Summary(pl.UTF-8):	Wiązania implementacji GLib2 keyfile dla .NET
