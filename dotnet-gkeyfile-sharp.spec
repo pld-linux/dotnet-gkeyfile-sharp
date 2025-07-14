@@ -43,7 +43,7 @@ Pliki programistyczne gkeyfile-sharp.
 
 %prep
 %setup -q -n mono-gkeyfile-sharp-1a1adb8/
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal}
