@@ -4,7 +4,7 @@ Summary:	.NET bindings for GLib2's keyfile implementation
 Summary(pl.UTF-8):	Wiązania implementacji GLib2 keyfile dla .NET
 Name:		dotnet-gkeyfile-sharp
 Version:	0.1
-Release:	2
+Release:	3
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	gkeyfile-sharp-%{version}.tar.gz
