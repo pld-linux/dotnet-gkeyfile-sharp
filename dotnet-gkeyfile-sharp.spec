@@ -1,10 +1,12 @@
 #
+# managed dotnet code, no native debug sources
+%undefine	_debugsource_packages
 #
 Summary:	.NET bindings for GLib2's keyfile implementation
 Summary(pl.UTF-8):	Wiązania implementacji GLib2 keyfile dla .NET
 Name:		dotnet-gkeyfile-sharp
 Version:	0.1
-Release:	3
+Release:	4
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	gkeyfile-sharp-%{version}.tar.gz
@@ -49,7 +51,8 @@ Pliki programistyczne gkeyfile-sharp.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	CSC=/usr/bin/mcs
 %{__make} -j1
 
 %install
