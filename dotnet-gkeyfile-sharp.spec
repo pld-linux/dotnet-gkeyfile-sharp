@@ -52,7 +52,7 @@ Pliki programistyczne gkeyfile-sharp.
 %{__autoconf}
 %{__automake}
 %configure \
-	CSC=/usr/bin/mcs
+	CSC=%{_bindir}/mcs
 %{__make} -j1
 
 %install
